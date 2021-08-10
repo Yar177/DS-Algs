@@ -4,7 +4,7 @@ import Foundation
 
 var optionalNum:Int?
 
-//optionalNum = 22
+optionalNum = 22
 
 //MARK: if let
 if let num = optionalNum{
@@ -13,18 +13,24 @@ if let num = optionalNum{
     print("I don't have a value")
 }
 
+
 //MARK: guard
 func guardUnrwap(number:Int?){
     guard let number = number else {
         print("Exiting func")
         return
     }
-    
     print("I have a value of \(number)")
 }
 guardUnrwap(number: optionalNum)
 
+
 //MARK: force unwraping
+let forceUnwrap = optionalNum!
+
+
+//MARK: optional chaining
+
 
 
 //: [Next](@next)
