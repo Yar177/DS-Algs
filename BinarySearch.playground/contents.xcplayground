@@ -3,5 +3,6 @@
     <pages>
         <page name='onReady DesignPattern'/>
         <page name='Untitled Page'/>
+        <page name='Factorials+Recrursion'/>
     </pages>
 </playground>
