@@ -5,5 +5,6 @@
         <page name='BinarySearch'/>
         <page name='Factorials+Recrursion'/>
         <page name='BinaryTRee'/>
+        <page name='Optionals'/>
     </pages>
 </playground>

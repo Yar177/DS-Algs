@@ -5,13 +5,6 @@ import UIKit
 
 
 
-//       10
-//      /  \
-//     5    14
-//    /    /  \
-//   1    11   20
-
-
 class Node{
     let value: Int
     var leftChild: Node?
@@ -24,8 +17,13 @@ class Node{
     }
 }
 
-let oneNode = Node(value: 11, leftChild: nil, rightChild: nil)
+//       10
+//      /  \
+//     5    14
+//    /    /  \
+//   1    11   20
 
+let oneNode = Node(value: 11, leftChild: nil, rightChild: nil)
 let fiveNode = Node(value: 5, leftChild: oneNode, rightChild: nil)
 
 let twentyNode = Node(value: 20, leftChild: nil, rightChild: nil)
@@ -33,10 +31,6 @@ let elevenNode = Node(value: 11, leftChild: nil, rightChild: nil)
 let forteen = Node(value: 14, leftChild: elevenNode, rightChild: twentyNode)
 
 let tenRootNode = Node(value: 10, leftChild: fiveNode, rightChild: forteen)
-
-
-
-
 
 func searchBinaryTree(node: Node?, searchValue: Int) -> Bool{
     if node == nil{
