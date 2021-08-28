@@ -7,5 +7,7 @@
         <page name='BinaryTRee'/>
         <page name='Optionals'/>
         <page name='EnumSwift'/>
+        <page name='StringArrCompare'/>
+        <page name='CopyOnWrite'/>
     </pages>
 </playground>
