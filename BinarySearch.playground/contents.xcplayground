@@ -9,5 +9,6 @@
         <page name='EnumSwift'/>
         <page name='StringArrCompare'/>
         <page name='CopyOnWrite'/>
+        <page name='Strings'/>
     </pages>
 </playground>
