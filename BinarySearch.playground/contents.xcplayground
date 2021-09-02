@@ -15,5 +15,6 @@
         <page name='XOR'/>
         <page name='CalculatePi'/>
         <page name='StackTowersOfHanoi'/>
+        <page name='Arrays'/>
     </pages>
 </playground>
