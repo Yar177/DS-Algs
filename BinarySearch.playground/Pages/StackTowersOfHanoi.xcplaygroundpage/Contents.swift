@@ -27,7 +27,7 @@ func hanoi(from: Stack<Int>, to: Stack<Int>, temp: Stack<Int>, n: Int){
     }
 }
 
-hanoi(from: towerA, to: towerC, temp: towerB, n: numDiscs)
+//hanoi(from: towerA, to: towerC, temp: towerB, n: numDiscs)
 
 print(towerA)
 print(towerB)
