@@ -12,5 +12,8 @@
         <page name='Strings'/>
         <page name='RecursiveSwift'/>
         <page name='CompressedGene'/>
+        <page name='XOR'/>
+        <page name='CalculatePi'/>
+        <page name='StackTowersOfHanoi'/>
     </pages>
 </playground>
