@@ -10,5 +10,7 @@
         <page name='StringArrCompare'/>
         <page name='CopyOnWrite'/>
         <page name='Strings'/>
+        <page name='RecursiveSwift'/>
+        <page name='CompressedGene'/>
     </pages>
 </playground>
