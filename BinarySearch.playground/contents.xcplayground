@@ -16,5 +16,6 @@
         <page name='CalculatePi'/>
         <page name='StackTowersOfHanoi'/>
         <page name='Arrays'/>
+        <page name='LinkedList'/>
     </pages>
 </playground>
