@@ -17,5 +17,6 @@
         <page name='StackTowersOfHanoi'/>
         <page name='Arrays'/>
         <page name='LinkedList'/>
+        <page name='Search'/>
     </pages>
 </playground>
