@@ -32,14 +32,22 @@ func stringToGene(_ s: String) -> Gene{
 }
 
 var gene = stringToGene(geneSequence)
-print("\(gene)")
+//print("\(gene)"
 
 
 
 //MARK: 2.1.2. Linear search
 
+func linearSearch(_ geneArray: Gene, item: Codon) -> Bool{
+    for element in geneArray where item  == element{
+        return true
+    }
+    return false
+}
 
+let acg:Codon = (.A, .C, .G)
 
+linearSearch(gene, item: acg)
 
 
 
