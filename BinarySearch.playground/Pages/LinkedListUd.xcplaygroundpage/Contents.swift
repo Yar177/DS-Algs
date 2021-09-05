@@ -128,20 +128,21 @@ class LinkList {
             self.deleteFirst()
             return
         }
-        var nextNode = head
+        var currentNode = head
         var previousNode: Node?
         for _ in 0..<position{
-            previousNode = nextNode
-            nextNode = nextNode?.next
+            previousNode = currentNode
+            currentNode = currentNode?.next
         }
-        previousNode?.next = nextNode?.next
+        previousNode?.next = currentNode?.next
     }
     
     var isEmpty: Bool {
-        return false
+        return head == nil
     }
     
     func clear() {
+        head = nil
     }
     
     func printLinkedList() {
@@ -188,7 +189,13 @@ linkedList.deleteLast()
 linkedList.printLinkedList()
 
 
+linkedList.delete(at: 2)
+linkedList.printLinkedList()
 
+linkedList.isEmpty
+linkedList.clear()
+linkedList.isEmpty
+linkedList.printLinkedList()
 
 
 
