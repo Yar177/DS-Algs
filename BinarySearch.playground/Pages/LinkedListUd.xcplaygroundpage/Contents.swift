@@ -72,32 +72,69 @@ class LinkList {
 
     func addBack(_ data: Int) {
         let newNode = Node(data)
-        
         if head == nil {
             head = newNode
             return
         }
-        
         var node = head!
         while(node.next != nil){
-            
+            node = node.next!
         }
+        node.next = newNode
     }
 
     func getLast() -> Int? {
-        return nil
+        if head == nil {return nil}
+        var node = head!
+        while node.next != nil {
+            node = node.next!
+        }
+        return node.data
     }
 
     func insert(position: Int, data: Int) {
+        if position == 0 {
+            addFront(data)
+            return
+        }
+        let newNode = Node(data)
+        var currentNode  = head
+        for _ in 0..<position - 1 {
+            currentNode = currentNode?.next
+        }
+        newNode.next = currentNode?.next
+        currentNode?.next = newNode
+        
     }
     
     func deleteFirst() {
+        head = head?.next
     }
 
     func deleteLast() {
+        if head == nil{return}
+        var nextNode = head
+        var currentNode: Node?
+        
+        while nextNode?.next != nil{
+            currentNode = nextNode
+            nextNode = nextNode?.next
+        }
+        currentNode?.next = nil
     }
     
     func delete(at position: Int) {
+        if position == 0{
+            self.deleteFirst()
+            return
+        }
+        var nextNode = head
+        var previousNode: Node?
+        for _ in 0..<position{
+            previousNode = nextNode
+            nextNode = nextNode?.next
+        }
+        previousNode?.next = nextNode?.next
     }
     
     var isEmpty: Bool {
@@ -133,6 +170,26 @@ linkedList.printLinkedList()
 linkedList.addFront(4)
 
 linkedList.printLinkedList()
+
+linkedList.addBack(5)
+
+linkedList.printLinkedList()
+
+print(linkedList.getFirst())
+print(linkedList.getLast())
+
+linkedList.insert(position: 2, data: 6)
+linkedList.printLinkedList()
+
+linkedList.deleteFirst()
+linkedList.printLinkedList()
+
+linkedList.deleteLast()
+linkedList.printLinkedList()
+
+
+
+
 
 
 
