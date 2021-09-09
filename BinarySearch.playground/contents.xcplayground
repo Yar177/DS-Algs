@@ -19,5 +19,6 @@
         <page name='LinkedListUd'/>
         <page name='SearchBook'/>
         <page name='LengthOfLinkedList'/>
+        <page name='StackAndQueues'/>
     </pages>
 </playground>
