@@ -20,5 +20,6 @@
         <page name='SearchBook'/>
         <page name='LengthOfLinkedList'/>
         <page name='StackAndQueues'/>
+        <page name='HashTables'/>
     </pages>
 </playground>
