@@ -198,12 +198,114 @@ linkedList.isEmpty
 linkedList.printLinkedList()
 
 
+//=====================================-------------------=======
 
 
 
+struct LinkedList<Value>{
+    var head: LLNode<Value>?
+    var tail: LLNode<Value>?
+    var isEmpty:Bool{
+        return head == nil
+    }
+    mutating func push(_ value: Value){
+        head = LLNode(value: value, next: head)
+        if tail == nil{
+            tail = head
+        }
+    }
+    
+    mutating func append(_ value: Value){
+        guard !isEmpty else {
+            push(value)
+            return
+        }
+        let node = LLNode(value: value)
+        tail?.next = node
+        tail = node
+    }
+    
+    mutating func node(at index:Int) -> LLNode<Value>?{
+        var curreentIndex = 0
+        var currentNode = head
+        while currentNode != nil && curreentIndex < index {
+            currentNode = currentNode?.next
+            curreentIndex += 1
+        }
+        return currentNode
+    }
+
+    mutating func inseret(_ value: Value, after node: LLNode<Value>?){
+        node?.next = LLNode(value: value, next: node?.next)
+    }
+    
+    mutating func pop() -> Value?{
+        defer {
+            head = head?.next
+            if isEmpty{
+                tail = nil
+            }
+        }
+        return head?.value
+    }
+    init(){}
+}
+
+extension LinkedList:CustomStringConvertible{
+    var description: String{
+        guard let head = head else {
+            return "Empty List"
+        }
+        return String(describing: head)
+    }
+}
 
 
 
+var list = LinkedList<Int>()
+list.append(9)
+list.push(2)
+list.push(3)
+list.append(12)
+list.push(22)
+list.append(10)
+print(list)
+
+let midNode = list.node(at: 1)
+list.inseret(55, after: midNode)
+
+print(list)
+
+
+class LLNode<Value>{
+    var value: Value
+    var next: LLNode?
+    
+    init(value: Value, next: LLNode? = nil) {
+        self.value = value
+        self.next  = next
+    }
+}
+
+
+extension LLNode: CustomStringConvertible{
+    var description: String{
+        guard let next = next else {
+            return "\(value)"
+        }
+        return "\(value) -> " + String(describing: next) + " "
+    }
+}
+
+
+let nodeLL1 = LLNode(value: 1)
+let nodeLL2 = LLNode(value: 2)
+let nodeLL3 = LLNode(value: 3)
+
+nodeLL1.next = nodeLL2
+nodeLL2.next = nodeLL3
+
+print(nodeLL1)
 
 
 
