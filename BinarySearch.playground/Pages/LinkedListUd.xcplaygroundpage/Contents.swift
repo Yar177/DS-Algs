@@ -197,10 +197,7 @@ linkedList.clear()
 linkedList.isEmpty
 linkedList.printLinkedList()
 
-
-//=====================================-------------------=======
-
-
+//===================================-------------------===========================//
 
 struct LinkedList<Value>{
     var head: LLNode<Value>?
@@ -208,6 +205,9 @@ struct LinkedList<Value>{
     var isEmpty:Bool{
         return head == nil
     }
+    
+//    init(){}
+
     mutating func push(_ value: Value){
         head = LLNode(value: value, next: head)
         if tail == nil{
@@ -248,7 +248,35 @@ struct LinkedList<Value>{
         }
         return head?.value
     }
-    init(){}
+    
+    mutating func removeLast() -> Value?{
+        guard let head = head else {
+            return nil
+        }
+        guard head.next != nil else {
+            return pop()
+        }
+        
+        var prev = head
+        var current = head
+        while current.next != nil{
+            prev = current
+            current = current.next!
+        }
+        prev.next = nil
+        tail = prev
+        return current.value
+    }
+    
+    mutating func removeAfter(after node: LLNode<Value>) -> Value?{
+        defer {
+            if node.next === tail {
+                tail = node
+            }
+            node.next = node.next?.next
+        }
+        return node.next?.value
+    }
 }
 
 extension LinkedList:CustomStringConvertible{
@@ -259,8 +287,6 @@ extension LinkedList:CustomStringConvertible{
         return String(describing: head)
     }
 }
-
-
 
 var list = LinkedList<Int>()
 list.append(9)
@@ -273,9 +299,14 @@ print(list)
 
 let midNode = list.node(at: 1)
 list.inseret(55, after: midNode)
-
 print(list)
 
+list.pop()
+print(list)
+
+list.removeLast()
+list.removeAfter(after: list.node(at: 3)!)
+print(list)
 
 class LLNode<Value>{
     var value: Value
@@ -287,7 +318,6 @@ class LLNode<Value>{
     }
 }
 
-
 extension LLNode: CustomStringConvertible{
     var description: String{
         guard let next = next else {
@@ -296,7 +326,6 @@ extension LLNode: CustomStringConvertible{
         return "\(value) -> " + String(describing: next) + " "
     }
 }
-
 
 let nodeLL1 = LLNode(value: 1)
 let nodeLL2 = LLNode(value: 2)

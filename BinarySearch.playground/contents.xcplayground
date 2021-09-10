@@ -21,5 +21,6 @@
         <page name='LengthOfLinkedList'/>
         <page name='StackAndQueues'/>
         <page name='HashTables'/>
+        <page name='Stack'/>
     </pages>
 </playground>
