@@ -23,5 +23,6 @@
         <page name='HashTables'/>
         <page name='Stack'/>
         <page name='Queues'/>
+        <page name='Recursion'/>
     </pages>
 </playground>
