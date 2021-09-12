@@ -24,5 +24,6 @@
         <page name='Stack'/>
         <page name='Queues'/>
         <page name='Recursion'/>
+        <page name='Trees'/>
     </pages>
 </playground>
