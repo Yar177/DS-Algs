@@ -123,7 +123,6 @@ class BinaryTreeNode<Element>{
     }
 }
 
-
 let ten = BinaryTreeNode(10)
 let nine = BinaryTreeNode(9)
 let two = BinaryTreeNode(2)
@@ -140,22 +139,46 @@ nine.righChild = three
 two.leftChild = four
 two.righChild  = six
 
+extension BinaryTreeNode{
+    func traverseInOrder(visit: (Element) -> Void){
+        leftChild?.traverseInOrder(visit: visit)
+        visit(value)
+        righChild?.traverseInOrder(visit: visit)
+    }
+}
 
+ten.traverseInOrder{
+    print($0)
+}
 
+let blackListPat = "[\\'/\" `]"
 
+func checkForCharacters(_ string: String, _ characterSet: String) -> Bool {
+    let invalidCharacters = CharacterSet(charactersIn: characterSet)
+    if string.rangeOfCharacter(from: invalidCharacters) != nil {
+        return true
+    } else {
+    return false
+    }
+}
 
+let thisType = "string".rangeOfCharacter(from: CharacterSet(charactersIn: "is"))
+print(type(of: thisType))
 
+checkForCharacters("testing/1", blackListPat)
 
+extension String{
+    func containsCharacters(_ characterSet: String) -> Bool {
+        let invalidCharacters = CharacterSet(charactersIn: characterSet)
+        if self.rangeOfCharacter(from: invalidCharacters) != nil {
+            return true
+        } else {
+        return false
+        }
+    }
+}
 
-
-
-
-
-
-
-
-
-
+"testing1".containsCharacters(blackListPat)
 
 
 //: [Next](@next)
