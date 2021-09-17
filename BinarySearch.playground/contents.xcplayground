@@ -25,5 +25,6 @@
         <page name='Queues'/>
         <page name='Recursion'/>
         <page name='Trees'/>
+        <page name='String'/>
     </pages>
 </playground>
