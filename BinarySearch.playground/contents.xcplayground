@@ -28,5 +28,6 @@
         <page name='String'/>
         <page name='BinarySearchTree'/>
         <page name='DynamicPrograming'/>
+        <page name='SortingAlgs'/>
     </pages>
 </playground>
