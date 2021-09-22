@@ -26,5 +26,6 @@
         <page name='Recursion'/>
         <page name='Trees'/>
         <page name='String'/>
+        <page name='BinarySearchTree'/>
     </pages>
 </playground>

@@ -32,6 +32,8 @@ print(str[index])
 
 
 
+
+
 for i in 1...100{
     if i % 15 == 0 {
         print("FizzBuzz")
@@ -40,9 +42,18 @@ for i in 1...100{
     }else if i % 5 == 0{
         print("Buzz")
     }else {
-        print(1)
+        print(i)
     }
 }
+
+var fullName: String = "First Last"
+let fullNameArr = fullName.components(separatedBy: "")
+
+
+
+
+
+
 
     
 //for i in 0...5{
