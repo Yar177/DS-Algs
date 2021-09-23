@@ -12,18 +12,8 @@ func nextChar(_ str:String, _ rotatingFactor:UInt32 = 1) -> String{
         if let var4 = UnicodeScalar(nextUnicode) {
             newStr.append(Character(UnicodeScalar(var4)))
         }
+      }
     }
-    }
-//    if let firstChar = str.unicodeScalars.first {
-//        let nextUnicode = firstChar.value + rotatingFactor
-//        print(type(of: firstChar.value))
-//        if let var4 = UnicodeScalar(nextUnicode) {
-//            var nextString = ""
-//            nextString.append(Character(UnicodeScalar(var4)))
-//            print(nextString)
-//        }
-//    }
-    
     return newStr
 }
 
@@ -31,6 +21,25 @@ func nextChar(_ str:String, _ rotatingFactor:UInt32 = 1) -> String{
 nextChar("cool")
 
 
+func cipher(_ str: String, rotatingFactor: Int = 1) -> String{
+    var newStr = ""
+    for c in str{
+        if let orgChar = c.unicodeScalars.first {
+            let nextUnicode = orgChar.value + UInt32(rotatingFactor)
+            if let newChar = UnicodeScalar(nextUnicode){
+                newStr.append(Character(UnicodeScalar(newChar)))
+            }
+        }
+    }
+    return newStr
+}
+
+extension String{
+var stripped: String {
+       let okayChars = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890")
+       return self.filter {okayChars.contains($0) }
+   }
+}
 
 
 //: [Next](@next)

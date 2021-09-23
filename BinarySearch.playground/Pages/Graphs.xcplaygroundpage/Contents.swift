@@ -2,6 +2,13 @@
 
 import Foundation
 
-var greeting = "Hello, playground"
+
+//edgeList
+//adjencency Matrix
+//adjencency list
+
+
+
+
 
 //: [Next](@next)

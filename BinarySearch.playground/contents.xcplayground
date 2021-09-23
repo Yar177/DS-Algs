@@ -29,5 +29,6 @@
         <page name='BinarySearchTree'/>
         <page name='DynamicPrograming'/>
         <page name='SortingAlgs'/>
+        <page name='Graphs'/>
     </pages>
 </playground>
