@@ -18,10 +18,7 @@ func nextChar(_ str:String, _ rotatingFactor:UInt32 = 1) -> String{
 }
 
 
-nextChar("cool")
-let cc = "cool"
-
-
+nextChar("cool")    
 
 func cipher(_ str: String, rotatingFactor: Int = 1) -> String{
     var newStr = ""
