@@ -153,8 +153,14 @@ findContact(A, B, C)
 
 
 
+for radians in stride(from: 0.0, to: .pi * 2, by: .pi / 2){
+    let degrees = Int(radians * 180 / .pi)
+    print("Degrees: \(degrees), radians: \(radians)" )
+}
 
-
+for countdown in stride(from: 5, through: 0, by: -2){
+    print("\(countdown)..")
+}
 
 
 
