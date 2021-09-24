@@ -19,6 +19,8 @@ func nextChar(_ str:String, _ rotatingFactor:UInt32 = 1) -> String{
 
 
 nextChar("cool")
+let cc = "cool"
+
 
 
 func cipher(_ str: String, rotatingFactor: Int = 1) -> String{
