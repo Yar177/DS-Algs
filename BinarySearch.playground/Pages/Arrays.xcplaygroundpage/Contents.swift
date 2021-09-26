@@ -167,6 +167,22 @@ for countdown in stride(from: 5, through: 0, by: -2){
 
 
 
+func getLonly(a:[Int]) -> Int{
+    var dic = [Int:Bool]()
+    
+    for i in 0...a.count - 1{
+        print(a[i])
+        if let dub = dic[a[i]]{
+            dic[a[i]] = true
+        }else{
+            dic[a[i]] = false
+        }
+    }
+    print(dic)
+    return 0
+}
+
+getLonly(a: [1,2,3,1,2])
 
 
 

@@ -25,9 +25,9 @@ let bub = BubbleSort()
 bub.sort(a)
 
 
-func mergeSoer(_ array:[Int]) -> [Int]{
-    
-}
+//func mergeSoer(_ array:[Int]) -> [Int]{
+//
+//}
 
 
 //: [Next](@next)
