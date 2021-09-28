@@ -110,21 +110,73 @@ class Cellular: Telephone{
 
 
 
+// protocols specify the methods and properties that an object "type" will need to impliment
+//protocol only indicate the definition of the method and not the actual body
+//func makeCall()
+
+protocol TelephoneProtocol{
+    var phoneNum:Int { get set }
+    func makeCall()
+    func hangUp()
+}
+
+extension TelephoneProtocol{
+    func makeCall(){
+        print("Make Call")
+    }
+    
+    func hangUp(){
+        print("Hang up")
+    }
+}
+
+//implimenting a protocol "ia-a" or "can-do"
+class LandLineWPro: TelephoneProtocol{
+    var phoneNum:Int
+    init(phoneNum:Int){
+        self.phoneNum = phoneNum
+    }
+}
+
+
+//structs
+//struct vs classes
+    //structs can't inherit
+    //structures can have memberwise initializer /memberwise init is an auto init
+    //struct are value type NOT a refrence type
+
+
+struct TelephoneStruct{
+    var miles:Double
+}
+
+var disStruct = TelephoneStruct(miles: 22)
+
+
+//Does the Distance type need to subclass? No, it doesn’t.
+// Should there be only one Distance object? No, there can be more than one.
+//Is the value equivalent to its identity? If you had two 100 km Distance objects,
+//they should be treated as equivalent, so yes, the value is equivalent to identity.
+
+
+//Extensions
+
+extension Dictionary{
+    func add(other:Dictionary)->Dictionary{
+        var returnDictionary:Dictionary = self
+        for (key, value) in other{
+            returnDictionary[key] = value
+        }
+        return returnDictionary
+    }
+}
+
+var somelanguages = ["eng":"English","esp":"Spanish","ita":"Italian"]
+var moreLanguages = ["deu":"German","chi":"Chinese","fre":"French"]
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+var languages = somelanguages.add(other: moreLanguages)
 
 
 
