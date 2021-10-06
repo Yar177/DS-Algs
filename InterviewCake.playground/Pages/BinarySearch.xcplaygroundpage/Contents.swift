@@ -4,15 +4,15 @@ import Foundation
 
 func binarySearch(for input:Int, in arr:[Int]) -> Bool{
     //floorIndex and ceillingIndex as walls
-    var floorIndex = 0
+    var floorIndex = -1
     var ceillingIndex = arr.count
     
-    while floorIndex < ceillingIndex{
+    while floorIndex + 1 < ceillingIndex{
         let distance = ceillingIndex - floorIndex
         let halfDistance = distance / 2
         let guessIndex = floorIndex + halfDistance
         
-        let guessVal = arr[guessVal]
+        let guessVal = arr[guessIndex]
         if guessVal == input{
             return true
         }
@@ -25,10 +25,7 @@ func binarySearch(for input:Int, in arr:[Int]) -> Bool{
     return false
 }
 
-
-
-binarySearch(for 3, in [3,4,5,6,3,2,1])
-
+binarySearch(for: 12, in: [0,1,1,1,2,3,5])
 
 
 
