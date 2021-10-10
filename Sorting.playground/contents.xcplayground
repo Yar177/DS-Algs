@@ -3,5 +3,6 @@
     <pages>
         <page name='ExploringSwiftClassesAndProtocols'/>
         <page name='SorrtingAlgsKI'/>
+        <page name='ExploringSwiftEnum'/>
     </pages>
 </playground>
