@@ -75,6 +75,7 @@ let hourFromNow = Date(timeIntervalSinceNow: 3600)
 enum DateType{
     case singleDate(Date)
     case dateRange(Range<Date>)
+    case year(Int)
 }
 let dates:[DateType] = [
     DateType.singleDate(now),
@@ -85,7 +86,267 @@ for dateType in dates{
     switch dateType{
     case .singleDate(let date): print("Date is \(date)")
     case .dateRange(let range): print("Range is \(range)")
+    case .year(let year): print("Year is \(year)")
     }
 }
+
+//Enum
+//algebraic data types - sum types - or types
+//enum can only be one thing at once
+//mutually exclusive properties
+
+struct MessageStruct {
+    let userId: String
+    let contents: String?
+    let date: Date
+    let hasJoined: Bool
+    let hasLeft: Bool
+    let isBeingDrafted: Bool
+    let isSendingBalloons: Bool
+}
+
+
+let joinMessage = MessageStruct(userId: "1",
+                          contents: nil,
+                          date: Date(),
+                          hasJoined: true, // We set the joined boolean
+                          hasLeft: false,
+                          isBeingDrafted: false,
+                          isSendingBalloons: false)
+
+
+let textMessage = MessageStruct(userId: "2",
+                          contents: "Hey everyone!", // We pass a message
+                          date: Date(),
+                          hasJoined: false,
+                          hasLeft: false,
+                          isBeingDrafted: false,
+                          isSendingBalloons: false)
+
+
+//associated values
+enum Message {
+    case text(userId:String, contents:String, date:Date)
+    case draft(userId:String, date:Date)
+    case join(userId:String, date:Date)
+    case leave(userId:String, date:Date)
+    case balloon(userId:String, date:Date)
+}
+
+let textMessageEnum = Message.text(userId: "2", contents: "Bonjour!", date: Date())
+let joinMessageEnum = Message.join(userId: "2", date: Date())
+
+func logMessage(message: Message){
+    switch message{
+    case let .text(userId: id, contents: contents, date: date):
+        print("[\(date)] User \(id) sends message: \(contents)")
+    case let .draft(userId: id, date: date):
+        print("[\(date)] User \(id) is drafting a message")
+    case let .join(userId: id, date: date):
+        print("[\(date)] User \(id) has joined the chatroom")
+    case let .leave(userId: id, date: date):
+        print("[\(date)] User \(id) has left the chatroom")
+    case let .balloon(userId: id, date: date):
+        print("[\(date)] User \(id) is sending balloons")
+    }
+}
+
+logMessage(message: textMessageEnum)
+logMessage(message: joinMessageEnum)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //: [Next](@next)
