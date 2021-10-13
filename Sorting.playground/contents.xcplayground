@@ -4,5 +4,6 @@
         <page name='ExploringSwiftClassesAndProtocols'/>
         <page name='SorrtingAlgsKI'/>
         <page name='ExploringSwiftEnum'/>
+        <page name='ArrayAndStringManipulationIC'/>
     </pages>
 </playground>

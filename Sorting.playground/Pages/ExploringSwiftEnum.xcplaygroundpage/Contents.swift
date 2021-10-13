@@ -155,12 +155,25 @@ logMessage(message: textMessageEnum)
 logMessage(message: joinMessageEnum)
 
 
+if case let Message.text(userId: _, contents: contents, date: _) = textMessageEnum{
+    print("Received: \(contents)")
+}
 
 
-
-
-
-
+enum ImageType:String{
+    case jpg
+    case bmp
+    case gif
+    
+    init?(rawValue: String) {
+        switch rawValue.lowercased(){
+        case "jpg", "jpeg": self = .jpg
+        case "bmp", "bitmap": self = .bmp
+        case "gif", "gifv": self = .gif
+        default: return nil
+        }
+    }
+}
 
 
 
