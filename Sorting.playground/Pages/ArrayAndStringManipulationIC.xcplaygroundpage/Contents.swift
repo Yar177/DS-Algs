@@ -101,7 +101,7 @@ func isPalindreeome(_ x: Int) -> Bool{
 }
 
 
-isPalindreeome(181)
+isPalindreeome(1881)
 
 
 
