@@ -5,7 +5,7 @@ import Foundation
 
 func binaryString(_ n : Int) -> [String]{
     var res = ["0" , "1"]
-    for i in 2..<n{
+    for _ in 2...n{
         var newRes:[String] = []
         for s in res{
             newRes.append(s + "0")
@@ -16,9 +16,20 @@ func binaryString(_ n : Int) -> [String]{
     return res
 }
 
+func binaryStrings(_ slate: inout String, _ n: Int){
+    if n == 0{
+        print(slate)
+    }else{
+        var slate1 = slate + "1"
+        var slate0 = slate + "0"
+        binaryStrings(&slate0, n - 1)
+        binaryStrings(&slate1, n - 1)
+    }
+}
 
-
-binaryString(4)
+//print(binaryString(4))
+var str = ""
+binaryStrings(&str, 4)
 
 
 
