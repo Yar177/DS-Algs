@@ -147,9 +147,105 @@ func reverse(_ str: inout [Character], leftIndex: Int, rightIndex: Int){
     }
 }
 
-reverseWords(&message)
+//reverseWords(&message)
+//
+//print(message)
 
-print(message)
+
+//MARK: IC Solution Reverse Char Array in place
+func reverseCharacters(_ str: inout [Character], from startIndex: Int, until endIndex: Int){
+    guard str.count > 0 else{
+        return
+    }
+    var leftIndex = startIndex
+    var rightIndex = endIndex - 1
+    while leftIndex < rightIndex{
+        let temp = str[leftIndex]
+        str[leftIndex] = str[rightIndex]
+        str[rightIndex] = temp
+        leftIndex += 1
+        rightIndex -= 1
+    }
+}
+
+func reverWords(_ str: inout [Character]){
+    reverseCharacters(&str, from: str.startIndex, until: str.endIndex)
+    
+    var currentWordStrartIndex = str.startIndex
+    for i in str.indices{
+        if str[i] == " "{
+            reverseCharacters(&str, from: currentWordStrartIndex, until: i)
+            currentWordStrartIndex = str.index(after: i)
+        }
+    }
+    reverseCharacters(&str, from: currentWordStrartIndex, until: str.endIndex)
+}
+
+
+reverWords(&message)
+print(message   )
+
+
+
+let myArray = [3, 4, 6, 10, 11, 15]
+let alicesArray = [1, 5, 8, 12, 14, 19]
+
+func mergeArrays(_ arr1: [Int],_ arr2:[Int]) -> [Int]{
+    var resultArray:[Int] = []
+    var arr1Index = arr1.startIndex
+    var arr2Index = arr2.startIndex
+    
+//    if arr1.count < arr2.count{
+//
+//    }
+    
+    while arr1Index < arr1.count{
+        if arr1[arr1Index] < arr2[arr2Index]{
+            resultArray.append(arr1[arr1Index])
+            arr1Index += 1
+        }else{
+            resultArray.append(arr2[arr2Index])
+            arr2Index += 1
+        }
+    }
+    
+    
+    return resultArray
+}
+
+print(mergeArrays(myArray, alicesArray))
+
+
+
+
+func meregeSortedArrays(_ myArray:[Int], _ alicesArray:[Int]) -> [Int]{
+    return (myArray + alicesArray).sorted()
+}
+
+
+print(meregeSortedArrays(myArray, alicesArray))
+// prints [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
