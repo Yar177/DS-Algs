@@ -96,6 +96,24 @@ print(mergeRange(allMeetings))
 
 
 
+var chArray = ["a" , "b" , "d" , "r" , "y"]
+
+
+func reverseeInPlace(_ chArray: inout [String]){
+    var startInex = 0
+    var endIndex = chArray.count - 1
+    
+    while startInex < endIndex{
+        let temp = chArray[startInex]
+        chArray[startInex] = chArray[endIndex]
+        chArray[endIndex] = temp
+        startInex += 1
+        endIndex -= 1
+    }
+
+}
+
+reverseeInPlace(&chArray)
 
 
 
