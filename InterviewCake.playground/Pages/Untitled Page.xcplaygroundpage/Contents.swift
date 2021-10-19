@@ -43,3 +43,163 @@ class  LinkedListNode<T>{
     var next: LinkedListNode?
     
 }
+
+
+
+class Meeting: CustomStringConvertible{
+    var startTime: Int
+    var endTime: Int
+    
+    init(startTime: Int, endTime: Int){
+        self.startTime = startTime
+        self.endTime = endTime
+    }
+    var description: String{
+        return "(\(startTime), \(endTime))"
+    }
+}
+
+
+let meeting1 = Meeting(startTime: 2, endTime: 3)
+let meeting2 = Meeting(startTime: 6, endTime: 9)
+
+var allMeetings = [
+    Meeting(startTime: 0, endTime: 1),
+    Meeting(startTime: 3, endTime: 5),
+    Meeting(startTime: 4, endTime: 8),
+    Meeting(startTime: 10, endTime: 12),
+    Meeting(startTime: 9, endTime: 10)
+]
+
+
+func mergeRange(_ meetings: [Meeting]) -> [Meeting]{
+    var sortedMeetings = meetings.sorted { $0.startTime < $1.startTime}
+   // sortedMeetings.sort {$0.startTime < $1.startTime}
+    
+    var mergedMeetings = [sortedMeetings[0]]
+    for i in 1..<sortedMeetings.count{
+        let currentMeeting = sortedMeetings[i]
+        let lastMeergedMeeting = mergedMeetings[mergedMeetings.count - 1]
+        
+        if currentMeeting.startTime <= lastMeergedMeeting.endTime{
+            lastMeergedMeeting.endTime = max(lastMeergedMeeting.endTime , currentMeeting.endTime)
+        }else{
+            mergedMeetings.append(currentMeeting)
+        }
+    }
+    
+    return mergedMeetings
+}
+
+
+print(mergeRange(allMeetings))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
