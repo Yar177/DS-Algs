@@ -27,9 +27,22 @@ func binaryStrings(_ slate: inout String, _ n: Int){
     }
 }
 
+
+func decimalStrings(_ slate: inout String, _ n: Int){
+    if n == 0{
+        print(slate)
+    }else{
+        for i in 0...9{
+        var slate1 = slate + "\(i)"
+            decimalStrings(&slate1, n - 1)
+        }
+    }
+}
+
 //print(binaryString(4))
 var str = ""
-binaryStrings(&str, 4)
+//binaryStrings(&str, 4)
+decimalStrings(&str, 2)
 
 
 
