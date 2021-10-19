@@ -9,7 +9,7 @@ enum GetIthItemInLInkedListError: Error, CustomStringConvertible{
     var description: String{
         switch self{
         case .negativeIndex:
-            return "Index can't be negative"
+            return "Index can"t be negative"
         case .indexGreaterThanList:
             return "List has fewer that idex + 1 nodes"
         }
@@ -115,6 +115,42 @@ func reverseeInPlace(_ chArray: inout [String]){
 
 reverseeInPlace(&chArray)
 
+var message:[Character] = ["c", "a", "k", "e", " ",
+             "p", "o", "u", "n", "d", " ",
+             "s", "t", "e", "a", "l"]
+func reverseWords(_ str: inout [Character]){
+    guard str.count > 0 else{
+        return
+    }
+    
+    reverse(&str, leftIndex: 0, rightIndex:  str.count - 1)
+   
+    var spaceIndex = 0
+    for i in 0..<str.count{
+        if str[i] == " "{
+            reverse(&str, leftIndex: spaceIndex, rightIndex: i)
+            spaceIndex = i
+        }
+            
+    }
+}
+
+func reverse(_ str: inout [Character], leftIndex: Int, rightIndex: Int){
+    var leftIndex = leftIndex
+    var rightIndex = rightIndex
+    
+    while leftIndex < rightIndex{
+        let temp = str[leftIndex]
+        str[leftIndex] = str[rightIndex]
+        str[rightIndex] = temp
+        leftIndex += 1
+        rightIndex -= 1
+    }
+}
+
+reverseWords(&message)
+
+print(message)
 
 
 
@@ -122,6 +158,26 @@ reverseeInPlace(&chArray)
 
 
 
+
+
+
+
+
+
+/*
+let xs = (0..<26).map({Character(UnicodeScalar("a".unicodeScalars.first!.value + $0)!)})
+
+
+let aScalars = "a".unicodeScalars
+let aCode = aScalars[aScalars.startIndex].value
+
+let letters: [Character] = (0..<26).map {
+    i in Character(UnicodeScalar(aCode + i)!)
+}
+
+*/
+
+let hScalars = "a".unicodeScalars
 
 
 
