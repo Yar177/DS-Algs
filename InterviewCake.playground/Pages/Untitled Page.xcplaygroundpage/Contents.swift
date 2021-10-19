@@ -9,7 +9,7 @@ enum GetIthItemInLInkedListError: Error, CustomStringConvertible{
     var description: String{
         switch self{
         case .negativeIndex:
-            return "Index can"t be negative"
+            return "Index can't be negative"
         case .indexGreaterThanList:
             return "List has fewer that idex + 1 nodes"
         }
@@ -123,22 +123,21 @@ func reverseWords(_ str: inout [Character]){
         return
     }
     
-    reverse(&str, leftIndex: 0, rightIndex:  str.count - 1)
+    reverse(&str, leftIndex: 0, rightIndex:  str.count)
    
-    var spaceIndex = 0
+    var currentWordStart = 0
     for i in 0..<str.count{
         if str[i] == " "{
-            reverse(&str, leftIndex: spaceIndex, rightIndex: i)
-            spaceIndex = i
+            reverse(&str, leftIndex: currentWordStart, rightIndex: i)
+            currentWordStart = i + 1
         }
-            
     }
+    reverse(&str, leftIndex: currentWordStart, rightIndex: str.count)
 }
 
 func reverse(_ str: inout [Character], leftIndex: Int, rightIndex: Int){
     var leftIndex = leftIndex
-    var rightIndex = rightIndex
-    
+    var rightIndex = rightIndex - 1
     while leftIndex < rightIndex{
         let temp = str[leftIndex]
         str[leftIndex] = str[rightIndex]
