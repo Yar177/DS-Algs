@@ -228,6 +228,35 @@ print(meregeSortedArrays(myArray, alicesArray))
 
 
 
+//MARK: Merge to arrays IC Solution
+func mergeArraysIc(_ myArray: [Int], _ alicesArray:[Int]) -> [Int]{
+    var mergeArray = Array(repeating: 0, count: myArray.count + alicesArray.count)
+    
+    var currentIndexAlices = 0
+    var currentIndexMine = 0
+    var currentIndexMerged = 0
+    
+    while currentIndexMerged < mergeArray.count{
+        let isMyArrayExhausted = currentIndexMine >= myArray.count
+        let isAlicesArrayExhasuted = currentIndexAlices >= alicesArray.count
+        
+        if !isMyArrayExhausted && (isAlicesArrayExhasuted || myArray[currentIndexMine] < alicesArray[currentIndexAlices]){
+            mergeArray[currentIndexMerged] = myArray[currentIndexMine]
+            currentIndexMine += 1
+        } else {
+            mergeArray[currentIndexMerged] = alicesArray[currentIndexAlices]
+            currentIndexAlices += 1
+        }
+        currentIndexMerged += 1
+    }
+    
+    return mergeArray
+}
+
+
+
+
+print(mergeArraysIc(myArray, alicesArray))
 
 
 
@@ -253,12 +282,7 @@ print(meregeSortedArrays(myArray, alicesArray))
 
 
 
-
-
-
-
-
-
+    
 /*
 let xs = (0..<26).map({Character(UnicodeScalar("a".unicodeScalars.first!.value + $0)!)})
 
