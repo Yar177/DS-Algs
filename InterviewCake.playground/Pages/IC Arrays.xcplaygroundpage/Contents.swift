@@ -262,13 +262,41 @@ print(mergeArraysIc(myArray, alicesArray))
 
 
 
+var takeOutOrders = [17, 8, 24]
+var dineInOrders = [12, 19, 2]
+var servedOrders = [17, 8, 12, 19, 24, 2]
 
 
+var takeOutOrders1 = [1, 3, 5]
+var dineInOrders1 =  [2, 4, 6]
+var servedOrders1 = [1, 2, 4, 6, 5, 3]
 
 
+    func checkOrderOrder(_ takeOut: [Int], _ dineIn: [Int], _ servedOrders: [Int]) -> Bool{
+        var isOrdersInOrder = true
+        
+        var takeOutCurrentIndex = 0
+        var dineInCurrentIndex = 0
+        var servedOrdersCurrentIndex = 0
+        
+        while servedOrdersCurrentIndex < servedOrders.count{
+            let isTakeOutExhousted = takeOutCurrentIndex >= takeOut.count
+            let isDineInExhausted = dineInCurrentIndex >= dineIn.count
+            if !isTakeOutExhousted && (servedOrders[servedOrdersCurrentIndex] == takeOut[takeOutCurrentIndex]){
+                takeOutCurrentIndex += 1
+            }else if !isDineInExhausted && servedOrders[servedOrdersCurrentIndex] == dineIn[dineInCurrentIndex]{
+                dineInCurrentIndex += 1
+            }else{
+                isOrdersInOrder = false
+            }
+            servedOrdersCurrentIndex += 1
+        }
+        return isOrdersInOrder
+    }
 
 
-
+print(checkOrderOrder(takeOutOrders, dineInOrders, servedOrders))
+print(checkOrderOrder(takeOutOrders1, dineInOrders1, servedOrders1))
 
 
 
