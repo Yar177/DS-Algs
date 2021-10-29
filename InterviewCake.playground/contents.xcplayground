@@ -6,5 +6,6 @@
         <page name='Graphs'/>
         <page name='ArraysMethods'/>
         <page name='Hash'/>
+        <page name='GreedyAlgs'/>
     </pages>
 </playground>
