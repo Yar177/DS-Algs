@@ -86,7 +86,15 @@ swiftlyhighestPoserOf3(intArray)
 try highestPoserOf3(intArray)
 
 
+/*
+ You have an array of integers, and for each index
+ you want to find the product of every integer except the integer at that index.
+ */
 
+var allIntProd = [1, 7, 3, 4]
+func getProductsOfAllIntsExceptAtIndex(_ items: [Int]) -> [Int]{
+    
+}
 
 
 
