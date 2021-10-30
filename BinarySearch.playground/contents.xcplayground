@@ -30,5 +30,6 @@
         <page name='DynamicPrograming'/>
         <page name='SortingAlgs'/>
         <page name='Graphs'/>
+        <page name='Closures+HighOrderFunction'/>
     </pages>
 </playground>
