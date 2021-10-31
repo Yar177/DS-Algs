@@ -92,14 +92,42 @@ try highestPoserOf3(intArray)
  */
 
 var allIntProd = [1, 7, 3, 4]
+var allIntProd1 = [1, 2, 6, 5, 9]
+var allIntProd2 = [3, 1, 2, 6, 5, 4]
 func getProductsOfAllIntsExceptAtIndex(_ items: [Int]) -> [Int]{
     
+    guard items.count >= 2 else{
+        return []
+    }
+    var productsBeefooreIndex = Array(repeating: 0, count: items.count)
+    
+    var productSoFar = 1
+    for i in 0..<items.count{
+        productsBeefooreIndex[i] = productSoFar
+        productSoFar *= items[i]
+    }
+     
+    productSoFar = 1
+    for i in (0..<items.count).reversed(){
+        productsBeefooreIndex[i] *= productSoFar
+        productSoFar *= items[i]
+    }
+    
+    
+    return productsBeefooreIndex
 }
 
 
+print(getProductsOfAllIntsExceptAtIndex(allIntProd))
+getProductsOfAllIntsExceptAtIndex(allIntProd1)
+getProductsOfAllIntsExceptAtIndex(allIntProd2)
 
 
+/*
+ Cafe Order Checker
+ Write a function to tell us if cafe customer orders are served in the same order they're paid for.
 
+ */
 
 
 

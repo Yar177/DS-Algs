@@ -31,5 +31,6 @@
         <page name='SortingAlgs'/>
         <page name='Graphs'/>
         <page name='Closures+HighOrderFunction'/>
+        <page name='Subscripts'/>
     </pages>
 </playground>
