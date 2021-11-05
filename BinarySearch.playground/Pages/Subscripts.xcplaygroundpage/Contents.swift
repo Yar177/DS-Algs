@@ -57,7 +57,7 @@ enum Planet: Int{
 
 let mars = Planet[4]
 print(mars)
-
+let earth = Planet.earth
 
 
 
