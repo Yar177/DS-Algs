@@ -3,6 +3,7 @@
 import Foundation
 import UIKit
 
+let stringUrl = "https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg"
 let url = URL(string: "https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg")
 DispatchQueue.global().async {
     guard let data = try? Data(contentsOf: url!) else{return}
@@ -44,24 +45,39 @@ inactiveQueue.async {
 inactiveQueue.activate()
 
 let imageCache = NSCache<NSString, UIImage>()
-func loadImage(_ url: String){
-    let image = UIImage()
-    if let cachedImage = imageCache.object(forKey: NSString(string: url)){
+extension UIImageView{
+    func loadImageCachedImg(_ url: String){
+        self.image = nil
+        if let cachedImage = imageCache.object(forKey: NSString(string: url)){
+            self.image = cachedImage
+            return
+        }
         
+        if let url = URL(string: url){
+            URLSession.shared.dataTask(with: url, completionHandler: {(data, response, errror) in
+                if errror != nil{
+                    print("\(String(describing:errror))")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    if let data = data{
+                        if let downloadedImage = UIImage(data: data){
+                            // imageCache.setObject(downloadedImage, forKey: NSString(string: url))
+                            imageCache.setObject(downloadedImage, forKey: NSString(string: "url"))
+                            self.image = downloadedImage
+                            
+                        }
+                    }
+                }
+                
+            }).resume()
+        }
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
+let imgaview = UIImageView()
+imgaview.loadImageCachedImg(stringUrl)
 
 
 
