@@ -30,6 +30,8 @@ class ColorChooserVC: UIViewController{
         view.backgroundColor = colors.color(currentColor)
         delegate.selectedColor(color: currentColor)
         dismiss(animated: true, completion: nil)
+        
+        NotificationCenter.default.post(name: Notification.Name("text_notification"), object: String(colors.colorName[currentColor]))
     }
     override func viewDidLoad(){
         let chooser = UISegmentedControl(items: colors.colorName)
@@ -59,10 +61,9 @@ class ViewController: UIViewController, ColorChooserDelegate{
         vc.currentColor = count
         vc.delegate = self
         present(vc, animated: true)
-        
-        
     }
-    
+   
+
     override func viewDidLoad(){
         view.backgroundColor = UIColor.orange
 
@@ -70,7 +71,15 @@ class ViewController: UIViewController, ColorChooserDelegate{
         button.backgroundColor = UIColor.darkGray
         button.addTarget(self, action: #selector(changeColor(sender:)), for: .touchUpInside)
         view.addSubview(button)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notification.Name("text_notification"), object: nil)
     }
+    
+    @objc func notificationReceived(_ notification: Notification){
+        let text = notification.object as! String?
+        print(text ?? "no message received")
+    }
+    
     
 }
 
@@ -84,6 +93,26 @@ PlaygroundPage.current.liveView = ViewController()
 
 
 
+
+
+//MARK: Notifications
+
+/*
+ //Sender
+ NotificationCenter.default.post(name: Notification.Name("text_notification"), object: String(currentColor))
+ 
+ //Receiver
+ in viewDidLoad
+NotificationCenter.default.addObserver(self, selector: #selector(notificationReceived(_:)), name: Notification.Name("text_notification"), object: nil)
+ 
+@objc func notificationReceived(_ notification: Notification){
+    let text = notification.object as! String?
+    //use text
+    print(text)
+}
+ */
+
+//MARK: Protocol
 /*
  protocol ColorChooserDelegate{
      func selectedColor(color:Int)
