@@ -13,9 +13,9 @@
 		4A16F513276003F700F32265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A16F511276003F700F32265 /* Main.storyboard */; };
 		4A16F515276003FA00F32265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A16F514276003FA00F32265 /* Assets.xcassets */; };
 		4A16F518276003FA00F32265 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A16F516276003FA00F32265 /* LaunchScreen.storyboard */; };
-		4A16F523276003FA00F32265 /* TDD_SBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F522276003FA00F32265 /* TDD_SBTests.swift */; };
 		4A16F52D276003FA00F32265 /* TDD_SBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F52C276003FA00F32265 /* TDD_SBUITests.swift */; };
 		4A16F52F276003FA00F32265 /* TDD_SBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F52E276003FA00F32265 /* TDD_SBUITestsLaunchTests.swift */; };
+		4A16F53C276006C900F32265 /* MovieStructTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F53B276006C900F32265 /* MovieStructTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +45,10 @@
 		4A16F517276003FA00F32265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A16F519276003FA00F32265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A16F51E276003FA00F32265 /* TDD_SBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDD_SBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A16F522276003FA00F32265 /* TDD_SBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDD_SBTests.swift; sourceTree = "<group>"; };
 		4A16F528276003FA00F32265 /* TDD_SBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDD_SBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A16F52C276003FA00F32265 /* TDD_SBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDD_SBUITests.swift; sourceTree = "<group>"; };
 		4A16F52E276003FA00F32265 /* TDD_SBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDD_SBUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4A16F53B276006C900F32265 /* MovieStructTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStructTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 		4A16F521276003FA00F32265 /* TDD_SBTests */ = {
 			isa = PBXGroup;
 			children = (
-				4A16F522276003FA00F32265 /* TDD_SBTests.swift */,
+				4A16F53B276006C900F32265 /* MovieStructTests.swift */,
 			);
 			path = TDD_SBTests;
 			sourceTree = "<group>";
@@ -198,6 +198,7 @@
 					};
 					4A16F51D276003FA00F32265 = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 						TestTargetID = 4A16F507276003F700F32265;
 					};
 					4A16F527276003FA00F32265 = {
@@ -268,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A16F523276003FA00F32265 /* TDD_SBTests.swift in Sources */,
+				4A16F53C276006C900F32265 /* MovieStructTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +494,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82QVHPVFHP;
@@ -507,6 +509,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yarsher.dev.TDD-SBTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDD_SB.app/TDD_SB";
@@ -518,6 +521,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82QVHPVFHP;
