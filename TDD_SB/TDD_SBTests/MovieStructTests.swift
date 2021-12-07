@@ -17,7 +17,21 @@ class MovieStructTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
+    
+    func testIinit_MovieWithTitle(){
+        let titile = "Generic Blockbuster"
+        let testMovie = Movie(title: titile)
+        XCTAssertNotNil(testMovie)
+        XCTAssertEqual(testMovie.title, titile)
+        
+    }
+    
+    
+    
+    
+    
+    
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

@@ -16,6 +16,7 @@
 		4A16F52D276003FA00F32265 /* TDD_SBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F52C276003FA00F32265 /* TDD_SBUITests.swift */; };
 		4A16F52F276003FA00F32265 /* TDD_SBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F52E276003FA00F32265 /* TDD_SBUITestsLaunchTests.swift */; };
 		4A16F53C276006C900F32265 /* MovieStructTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F53B276006C900F32265 /* MovieStructTests.swift */; };
+		4A16F53E276007AF00F32265 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F53D276007AF00F32265 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4A16F52C276003FA00F32265 /* TDD_SBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDD_SBUITests.swift; sourceTree = "<group>"; };
 		4A16F52E276003FA00F32265 /* TDD_SBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDD_SBUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4A16F53B276006C900F32265 /* MovieStructTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStructTests.swift; sourceTree = "<group>"; };
+		4A16F53D276007AF00F32265 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				4A16F514276003FA00F32265 /* Assets.xcassets */,
 				4A16F516276003FA00F32265 /* LaunchScreen.storyboard */,
 				4A16F519276003FA00F32265 /* Info.plist */,
+				4A16F53D276007AF00F32265 /* Movie.swift */,
 			);
 			path = TDD_SB;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				4A16F510276003F700F32265 /* ViewController.swift in Sources */,
 				4A16F50C276003F700F32265 /* AppDelegate.swift in Sources */,
+				4A16F53E276007AF00F32265 /* Movie.swift in Sources */,
 				4A16F50E276003F700F32265 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
