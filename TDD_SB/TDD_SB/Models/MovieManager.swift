@@ -6,17 +6,38 @@
 //
 
 import Foundation
+import CoreText
 
 
 class MovieManager{
-    var moviesToSee = 0
-    var movieSeenCount = 0
+    
+    var moviesToSee:Int {
+        moviesToSeeArray.count
+    }
+    var movieSeenCount:Int {
+        moviesSeenArray.count
+    }
     private var moviesToSeeArray = [Movie]()
+    private var moviesSeenArray = [Movie]()
+    
     func addMovie(movie: Movie){
-        moviesToSee += 1
+        moviesToSeeArray.append(movie)
     }
     
     func movieAtIndex(index: Int) -> Movie{
-        return Movie(title: "Test Movie")
+        return moviesToSeeArray[index]
     }
+    
+    
+    func checkOffMovieAtIndeex(index: Int){
+        guard index < moviesToSee else {return}
+
+        let checkeedMovie = moviesToSeeArray.remove(at: index)
+        moviesSeenArray.append(checkeedMovie)
+    }
+    
+    func checkedOffMovieAtIndeex(index: Int) -> Movie{
+        return moviesSeenArray[index]
+    }
+    
 }
