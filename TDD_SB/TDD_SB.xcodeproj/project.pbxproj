@@ -101,14 +101,14 @@
 		4A16F50A276003F700F32265 /* TDD_SB */ = {
 			isa = PBXGroup;
 			children = (
+				4A16F54027600DE100F32265 /* Controllers */,
+				4A16F53F27600DD500F32265 /* Models */,
 				4A16F50B276003F700F32265 /* AppDelegate.swift */,
 				4A16F50D276003F700F32265 /* SceneDelegate.swift */,
-				4A16F50F276003F700F32265 /* ViewController.swift */,
 				4A16F511276003F700F32265 /* Main.storyboard */,
 				4A16F514276003FA00F32265 /* Assets.xcassets */,
 				4A16F516276003FA00F32265 /* LaunchScreen.storyboard */,
 				4A16F519276003FA00F32265 /* Info.plist */,
-				4A16F53D276007AF00F32265 /* Movie.swift */,
 			);
 			path = TDD_SB;
 			sourceTree = "<group>";
@@ -116,7 +116,8 @@
 		4A16F521276003FA00F32265 /* TDD_SBTests */ = {
 			isa = PBXGroup;
 			children = (
-				4A16F53B276006C900F32265 /* MovieStructTests.swift */,
+				4A16F54227600E0E00F32265 /* TestContorllers */,
+				4A16F54127600E0300F32265 /* TestModels */,
 			);
 			path = TDD_SBTests;
 			sourceTree = "<group>";
@@ -128,6 +129,37 @@
 				4A16F52E276003FA00F32265 /* TDD_SBUITestsLaunchTests.swift */,
 			);
 			path = TDD_SBUITests;
+			sourceTree = "<group>";
+		};
+		4A16F53F27600DD500F32265 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A16F53D276007AF00F32265 /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A16F54027600DE100F32265 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A16F50F276003F700F32265 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4A16F54127600E0300F32265 /* TestModels */ = {
+			isa = PBXGroup;
+			children = (
+				4A16F53B276006C900F32265 /* MovieStructTests.swift */,
+			);
+			path = TestModels;
+			sourceTree = "<group>";
+		};
+		4A16F54227600E0E00F32265 /* TestContorllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TestContorllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
