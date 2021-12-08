@@ -80,4 +80,25 @@ class MovieManagerTests: XCTestCase {
     }
     
     
+    
+    func testClearArrays_ReturnsZerosArrays(){
+        sut.addMovie(movie: scifiMovie)
+        sut.addMovie(movie: actionMovie)
+        sut.checkOffMovieAtIndeex(index: 0)
+        XCTAssertEqual(sut.movieSeenCount, 1)
+        XCTAssertEqual(sut.moviesToSee, 1)
+        sut.clearArrays()
+        XCTAssertEqual(sut.movieSeenCount, 0)
+        XCTAssertEqual(sut.moviesToSee, 0)
+    }
+    
+    
+    //MARK: Chck duplicates
+    func testDuplicateMovies(){
+        sut.addMovie(movie: scifiMovie)
+        sut.addMovie(movie: scifiMovie)
+        
+        XCTAssertEqual(sut.moviesToSee, 1)
+    }
+    
 }

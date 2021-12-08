@@ -24,7 +24,6 @@ class MovieStructTests: XCTestCase {
         let testMovie = Movie(title: titile)
         XCTAssertNotNil(testMovie)
         XCTAssertEqual(testMovie.title, titile)
-        
     }
     
     
@@ -53,5 +52,22 @@ class MovieStructTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    
+    func testEquatable_ReturnTrue(){
+        let title = "Action"
+        let action1 = Movie(title: title)
+        let action2 = Movie(title: title)
+        
+        XCTAssertEqual(action1, action2)
+    }
+    
+    func testEquatable_ReturnsNotEqatableForDifferentMovies(){
+        let title = "Action"
+        let action1 = Movie(title: title)
+        let action2 = Movie(title: "\(title)1")
+        XCTAssertNotEqual(action1, action2)
+    }
+
 
 }
