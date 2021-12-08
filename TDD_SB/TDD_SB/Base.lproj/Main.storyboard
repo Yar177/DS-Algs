@@ -50,10 +50,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dataService" destination="5sZ-gF-lFY" id="BcU-Ma-bwM"/>
                         <outlet property="libraryTableView" destination="y1X-PL-TdY" id="JaX-Up-cCp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="5sZ-gF-lFY" userLabel="MovieLibraryDataService" customClass="MovieLibrartDataService" customModule="TDD_SB" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
         </scene>

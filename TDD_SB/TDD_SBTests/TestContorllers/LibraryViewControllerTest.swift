@@ -38,6 +38,16 @@ class LibraryViewControllerTest: XCTestCase {
         XCTAssertTrue(sut.libraryTableView.dataSource is MovieLibrartDataService)
     }
     
+    //MARK: Delegate
+    func testDelegate(){
+        XCTAssertNotNil(sut.libraryTableView.delegate)
+        XCTAssertTrue(sut.libraryTableView.dataSource is MovieLibrartDataService)
+    }
+    
+    //MARK: Data service
+    func testDataService_ViewDidLoad_SetsDataSourceAndDelegate(){
+        XCTAssertEqual(sut.libraryTableView.dataSource as! MovieLibrartDataService, sut.libraryTableView.delegate as! MovieLibrartDataService)
+    }
 
 
 }
