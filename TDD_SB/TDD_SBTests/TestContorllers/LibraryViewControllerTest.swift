@@ -15,7 +15,8 @@ class LibraryViewControllerTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        sut = LibraryViewController()
+        sut = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LibraryViewControllerId") as! LibraryViewController
+        _ = sut.view
     }
     
     override func setUpWithError() throws {
@@ -28,7 +29,15 @@ class LibraryViewControllerTest: XCTestCase {
     
     //MARK: Nil Checks
     func testLibraryVC_TVNotNil(){
-        
+        XCTAssertNotNil(sut.libraryTableView)
     }
+    
+    //MARK: Data Source
+    func terstDataSource(){
+        XCTAssertNotNil(sut.libraryTableView.dataSource)
+        XCTAssertTrue(sut.libraryTableView.dataSource is MovieLibrartDataService)
+    }
+    
+
 
 }
