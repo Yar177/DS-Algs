@@ -31,7 +31,7 @@ class MovieManagerTests: XCTestCase {
  //MARK: INIT MOVIEMANAGER
     func testInit_MoviesToSee_ReturnZero(){
         let moviesToSee = 0
-        XCTAssertEqual(sut.moviesToSee, moviesToSee)
+        XCTAssertEqual(sut.moviesToSeeCount, moviesToSee)
     }
     
     func testInit_MoviesScene_ReturnsZero(){
@@ -44,7 +44,7 @@ class MovieManagerTests: XCTestCase {
         let title = "Sci-Fi"
         let testMovie = Movie(title: title)
         sut.addMovie(movie: testMovie)
-        XCTAssertEqual(sut.moviesToSee, 1)
+        XCTAssertEqual(sut.moviesToSeeCount, 1)
     }
     
     func testQuery_ReturnsMovieAtIndex(){
@@ -60,7 +60,7 @@ class MovieManagerTests: XCTestCase {
         let title = "Action"
         sut.addMovie(movie: Movie(title: title))
         sut.checkOffMovieAtIndeex(index: 0)
-        XCTAssertEqual(sut.moviesToSee, 0)
+        XCTAssertEqual(sut.moviesToSeeCount, 0)
         XCTAssertEqual(sut.movieSeenCount, 1)
     }
     
@@ -86,10 +86,10 @@ class MovieManagerTests: XCTestCase {
         sut.addMovie(movie: actionMovie)
         sut.checkOffMovieAtIndeex(index: 0)
         XCTAssertEqual(sut.movieSeenCount, 1)
-        XCTAssertEqual(sut.moviesToSee, 1)
+        XCTAssertEqual(sut.moviesToSeeCount, 1)
         sut.clearArrays()
         XCTAssertEqual(sut.movieSeenCount, 0)
-        XCTAssertEqual(sut.moviesToSee, 0)
+        XCTAssertEqual(sut.moviesToSeeCount, 0)
     }
     
     
@@ -98,7 +98,7 @@ class MovieManagerTests: XCTestCase {
         sut.addMovie(movie: scifiMovie)
         sut.addMovie(movie: scifiMovie)
         
-        XCTAssertEqual(sut.moviesToSee, 1)
+        XCTAssertEqual(sut.moviesToSeeCount, 1)
     }
     
 }

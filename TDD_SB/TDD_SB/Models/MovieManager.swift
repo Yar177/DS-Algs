@@ -11,7 +11,7 @@ import CoreText
 
 class MovieManager{
     
-    var moviesToSee:Int {
+    var moviesToSeeCount:Int {
         moviesToSeeArray.count
     }
     var movieSeenCount:Int {
@@ -32,7 +32,7 @@ class MovieManager{
     
     
     func checkOffMovieAtIndeex(index: Int){
-        guard index < moviesToSee else {return}
+        guard index < moviesToSeeCount else {return}
 
         let checkeedMovie = moviesToSeeArray.remove(at: index)
         moviesSeenArray.append(checkeedMovie)
