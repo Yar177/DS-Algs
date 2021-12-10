@@ -19,5 +19,11 @@ class MovieCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    
+    func configMovieCell(movie: Movie){
+        
+    }
+    
+    
 }

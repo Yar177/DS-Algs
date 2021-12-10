@@ -98,6 +98,12 @@ class MovieLibraryDataServiceTest: XCTestCase {
         let mock = TableViewMock()
         mock.dataSource = sut
         mock.register(MovieCellMock.self, forCellReuseIdentifier: "movieCellId")
+        
+        sut.movieManager?.addMovie(movie: actionMovie)
+        mock.reloadData()
+        
+        let cell = mock.cellForRow(at: IndexPath(row: 0, section: 0)) as! MovieCellMock
+        XCTAssertEqual(cell.movieData, actionMovie)
     }
 
 }

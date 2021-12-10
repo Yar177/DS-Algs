@@ -24,7 +24,7 @@ extension MovieLibraryDataServiceTest{
     class MovieCellMock: MovieCellTableViewCell{
         var movieData: Movie?
         
-        func configMovieCell(movie: Movie){
+        override  func configMovieCell(movie: Movie){
             movieData = movie
         }
     }
