@@ -44,5 +44,13 @@ class MovieLibrartDataService: NSObject, UITableViewDataSource, UITableViewDeleg
         return 2
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let movieManager = movieManager else {fatalError()}
+        guard let librarYySection = LibrarySection(rawValue: indexPath.section) else {fatalError()}
+        if librarYySection == .moviesToSee {
+            movieManager.checkedOffMovieAtIndeex(index: indexPath.row)
+            tableView.reloadData()
+        }
+        
+    }
 }
