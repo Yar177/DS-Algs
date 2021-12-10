@@ -48,9 +48,15 @@ class MovieLibrartDataService: NSObject, UITableViewDataSource, UITableViewDeleg
         guard let movieManager = movieManager else {fatalError()}
         guard let librarYySection = LibrarySection(rawValue: indexPath.section) else {fatalError()}
         if librarYySection == .moviesToSee {
-            movieManager.checkedOffMovieAtIndeex(index: indexPath.row)
+            movieManager.checkOffMovieAtIndeex(index: indexPath.row)
             tableView.reloadData()
         }
-        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let librarYySection = LibrarySection(rawValue: section) else {fatalError()}
+        let sectionTitle = librarYySection.rawValue == 0 ? "Movies To See" : "Movie Seen"
+        return sectionTitle
     }
 }
