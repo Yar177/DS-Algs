@@ -22,6 +22,7 @@
 		4A16F5482760396900F32265 /* LibraryViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F5472760396900F32265 /* LibraryViewControllerTest.swift */; };
 		4A16F54B27603EAC00F32265 /* MovieLibrartDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F54A27603EAC00F32265 /* MovieLibrartDataService.swift */; };
 		4A16F54E27606F2E00F32265 /* MovieLibraryDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F54D27606F2E00F32265 /* MovieLibraryDataServiceTest.swift */; };
+		4A16F5512761C9C900F32265 /* MovieCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F5502761C9C900F32265 /* MovieCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		4A16F5472760396900F32265 /* LibraryViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewControllerTest.swift; sourceTree = "<group>"; };
 		4A16F54A27603EAC00F32265 /* MovieLibrartDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLibrartDataService.swift; sourceTree = "<group>"; };
 		4A16F54D27606F2E00F32265 /* MovieLibraryDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLibraryDataServiceTest.swift; sourceTree = "<group>"; };
+		4A16F5502761C9C900F32265 /* MovieCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		4A16F54F2761C98900F32265 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4A16F5502761C9C900F32265 /* MovieCellTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				4A16F5462760167300F32265 /* MovieManager.swift in Sources */,
 				4A16F53E276007AF00F32265 /* Movie.swift in Sources */,
 				4A16F50E276003F700F32265 /* SceneDelegate.swift in Sources */,
+				4A16F5512761C9C900F32265 /* MovieCellTableViewCell.swift in Sources */,
 				4A16F54B27603EAC00F32265 /* MovieLibrartDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
