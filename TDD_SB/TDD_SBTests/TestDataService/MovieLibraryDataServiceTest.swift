@@ -93,22 +93,15 @@ class MovieLibraryDataServiceTest: XCTestCase {
         
         XCTAssertTrue(mock.cellDequed)
     }
-
-}
-
-
-
-
-extension MovieLibraryDataServiceTest{
-    class TableViewMock: UITableView{
-        var cellDequed = false
-        
-        override func dequeueReusableCell(withIdentifier identifier: String) -> UITableViewCell? {
-            cellDequed = true
-            return super.dequeueReusableCell(withIdentifier: identifier)
-        }
+    
+    func testCell_SectionOnceConfig_SHouldSetCellData(){
+        let mock = TableViewMock()
+        mock.dataSource = sut
+        mock.register(MovieCellMock.self, forCellReuseIdentifier: "movieCellId")
     }
-    
-    
-    
+
 }
+
+
+
+

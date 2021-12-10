@@ -15,6 +15,8 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.libraryTableView.register(MovieCellTableViewCell.self, forCellReuseIdentifier: "movieCellId")
+
         self.libraryTableView.dataSource = dataService
         self.libraryTableView.delegate = dataService
     }
