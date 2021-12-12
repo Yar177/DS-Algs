@@ -52,25 +52,25 @@ class MovieLibraryDataServiceTest: XCTestCase {
         XCTAssertEqual(sections, 2)
     }
     
-    func testTableView_SectionOne(){
-        sut.movieManager?.addMovie(movie: scifiMovie)
-        sut.movieManager?.addMovie(movie: actionMovie)
-        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 2)
-        
-        sut.movieManager?.addMovie(movie: artHouseMovie)
-        tableView.reloadData()
-        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 3)
-    }
-    
-    func testTableVIewSectionTwo(){
-        sut.movieManager?.addMovie(movie: scifiMovie)
-        sut.movieManager?.addMovie(movie: actionMovie)
-        sut.movieManager?.checkOffMovieAtIndeex(index: 0)
-        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 1)
-        sut.movieManager?.checkOffMovieAtIndeex(index: 0)
-        tableView.reloadData()
-        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 2)
-    }
+//    func testTableView_SectionOne(){
+//        sut.movieManager?.addMovie(movie: scifiMovie)
+//        sut.movieManager?.addMovie(movie: actionMovie)
+//        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 2)
+//
+//        sut.movieManager?.addMovie(movie: artHouseMovie)
+//        tableView.reloadData()
+//        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 3)
+//    }
+//
+//    func testTableVIewSectionTwo(){
+//        sut.movieManager?.addMovie(movie: scifiMovie)
+//        sut.movieManager?.addMovie(movie: actionMovie)
+//        sut.movieManager?.checkOffMovieAtIndeex(index: 0)
+//        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 1)
+//        sut.movieManager?.checkOffMovieAtIndeex(index: 0)
+//        tableView.reloadData()
+//        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 2)
+//    }
     
     
 //    MARK: Cells
@@ -82,17 +82,17 @@ class MovieLibraryDataServiceTest: XCTestCase {
     }
     
     
-    func testCell_ShouldDequeCell(){
-        let mock = TableViewMock()
-        mock.dataSource = sut
-        mock.register(MovieCellTableViewCell.self, forCellReuseIdentifier: "movieCellId")
-        
-        sut.movieManager?.addMovie(movie: actionMovie)
-        mock.reloadData()
-        _ = mock.cellForRow(at: IndexPath(row: 0, section: 0))
-        
-        XCTAssertTrue(mock.cellDequed)
-    }
+//    func testCell_ShouldDequeCell(){
+//        let mock = TableViewMock()
+//        mock.dataSource = sut
+//        mock.register(MovieCellTableViewCell.self, forCellReuseIdentifier: "movieCellId")
+//        
+//        sut.movieManager?.addMovie(movie: actionMovie)
+//        mock.reloadData()
+//        _ = mock.cellForRow(at: IndexPath(row: 0, section: 0))
+//        
+//        XCTAssertTrue(mock.cellDequed)
+//    }
     
     func testCell_SectionOnceConfig_SHouldSetCellData(){
         let mock = TableViewMock()
