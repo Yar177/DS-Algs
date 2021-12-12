@@ -17,6 +17,8 @@
 		4A16F58927668F8400F32265 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F55F27668F8100F32265 /* ContentView.swift */; };
 		4A16F58A27668F8400F32265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A16F56027668F8300F32265 /* Assets.xcassets */; };
 		4A16F58B27668F8400F32265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A16F56027668F8300F32265 /* Assets.xcassets */; };
+		4A16F59C27668FFB00F32265 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F59B27668FFB00F32265 /* Forecast.swift */; };
+		4A16F59D27668FFB00F32265 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A16F59B27668FFB00F32265 /* Forecast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		4A16F57E27668F8400F32265 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A16F58227668F8400F32265 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		4A16F58427668F8400F32265 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		4A16F59B27668FFB00F32265 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 			children = (
 				4A16F55E27668F8100F32265 /* MultiPlatformAppApp.swift */,
 				4A16F55F27668F8100F32265 /* ContentView.swift */,
+				4A16F59A27668FCE00F32265 /* DataModels */,
 				4A16F56027668F8300F32265 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -139,6 +143,14 @@
 				4A16F58427668F8400F32265 /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		4A16F59A27668FCE00F32265 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				4A16F59B27668FFB00F32265 /* Forecast.swift */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A16F58827668F8400F32265 /* ContentView.swift in Sources */,
+				4A16F59C27668FFB00F32265 /* Forecast.swift in Sources */,
 				4A16F58627668F8400F32265 /* MultiPlatformAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A16F58927668F8400F32265 /* ContentView.swift in Sources */,
+				4A16F59D27668FFB00F32265 /* Forecast.swift in Sources */,
 				4A16F58727668F8400F32265 /* MultiPlatformAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
