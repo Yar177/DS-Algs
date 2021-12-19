@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class MyWeatherView: View {
+struct MyWeatherView: View {
     @State private var forecast =  [Forecast]()
     @State private var selection: Forecast?
     
@@ -25,7 +25,26 @@ class MyWeatherView: View {
     }
     
     func loadData(){
-        let
+        let weatherDataRequest = DataRequest<WeatherData>(city: "San Francisco")
+        
+        weatherDataRequest.getData { dataResults in
+            switch dataResults{
+            case .failuer:
+                print("Could not load weather data")
+            case .success(let weatherDataObject):
+                guard let forcastArray = weatherDataObject.first?.forecast else {return}
+                DispatchQueue.main.async {
+                    self.forecast = forcastArray
+                }
+            }
+        }
     }
 
+}
+
+
+struct MyWeatherView_Previews: PreviewProvider{
+    static var previews: some View{
+        MyWeatherView()
+    }
 }
