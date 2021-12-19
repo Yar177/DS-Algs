@@ -6,9 +6,8 @@
 //
 
 import Foundation
-
-struct Forecast: Decodable, Hashable, Identifiable{
-    
+struct Forecast : Decodable, Hashable, Identifiable{
+ 
     var id: UUID = UUID()
     var date: String
     var temp_min: Float
@@ -17,31 +16,33 @@ struct Forecast: Decodable, Hashable, Identifiable{
     var condition_desc: String
     
     
-    init(date: String, temp_min:Float, temp_max: Float, conditionName:String, conditionDesc: String){
+    init(date: String, temp_min: Float, temp_max: Float, conditionName: String, conditionDescription: String) {
+        id = UUID()
         self.date = date
         self.temp_min = temp_min
         self.temp_max = temp_max
         self.condition_name = conditionName
-        self.condition_desc = conditionDesc
+        self.condition_desc = conditionDescription
+        
     }
-    
     
     init(from decoder: Decoder) throws {
         id = UUID()
-        let containr = try decoder.container(keyedBy: CodingKeys.self)
-        self.date = try containr.decode(String.self, forKey: .date)
-        self.temp_min = try containr.decode(Float.self, forKey: .temp_min)
-        self.temp_max = try containr.decode(Float.self, forKey: .temp_max)
-        self.condition_name = try containr.decode(String.self, forKey: .condition_name)
-        self.condition_desc = try containr.decode(String.self, forKey: .condtion_desc)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        date = try container.decode(String.self, forKey: .date)
+        temp_min = try container.decode(Float.self, forKey: .temp_min)
+        temp_max = try container.decode(Float.self, forKey: .temp_max)
+        condition_name = try container.decode(String.self, forKey: .condition_name)
+        condition_desc = try container.decode(String.self, forKey: .condition_desc)
+        
     }
     
-    enum CodingKeys: String, CodingKey{
+    enum CodingKeys: String, CodingKey {
         case date
         case temp_min
         case temp_max
         case condition_name
-        case condtion_desc
+        case condition_desc
     }
     
 }

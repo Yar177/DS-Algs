@@ -76,7 +76,7 @@ struct WeatherDetail: View{
 
 struct WatherDetail_Preview: PreviewProvider{
     static var previews: some View{
-        WeatherDetail(forecast: Forecast(date: "11/11/2011", temp_min: 10, temp_max: 21, conditionName: "Windy", conditionDesc: "Attention! It is wendy"))
+        WeatherDetail(forecast: Forecast(date: "11/11/2011", temp_min: 10, temp_max: 21, conditionName: "Windy", conditionDescription: "Attention! It is wendy"))
 
     }
 }

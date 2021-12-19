@@ -10,7 +10,7 @@ import CoreLocation
 
 enum GetDataRequest<Type>{
     case success([Type])
-    case failuer
+    case failure
 }
 
 struct DataRequest<Type> where Type: Decodable{
@@ -18,7 +18,7 @@ struct DataRequest<Type> where Type: Decodable{
     let dataURL:URL
     
     init(city: String){
-        let dataPathString = (basePath + city).addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlHostAllowed)!
+        let dataPathString = (basePath + city).addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
         guard let dataUrl = URL(string: dataPathString) else { fatalError()}
         self.dataURL = dataUrl
     }
@@ -26,14 +26,14 @@ struct DataRequest<Type> where Type: Decodable{
     func getData(completion: @escaping (GetDataRequest<Type>) -> Void){
         let dataTask = URLSession.shared.dataTask(with: dataURL) { data, response, error in
             guard let jsonData = data else {
-                completion(.failuer)
+                completion(.failure)
                 return
             }
             do {
                 let resources = try JSONDecoder().decode([Type].self, from: jsonData)
                 completion(.success(resources))
             }catch{
-                completion(.failuer)
+                completion(.failure)
             }
         }
         dataTask.resume()

@@ -8,7 +8,7 @@
 import Foundation
 
 
-public enum Icon: String{
+public enum Icon: String {
     
     case sun = "sun.min.fill"
     case cloudy = "cloud.fill"
@@ -16,9 +16,9 @@ public enum Icon: String{
     case thunderstorm = "cloud.bolt.fill"
     case storm = "wind"
     case snow = "cloud.snow.fill"
-    
+
     static func systemIconForCondition (condition: String) -> String {
-        switch condition{
+        switch condition {
         case "sun":
             return Icon.sun.rawValue
         case "cloudy":
@@ -35,4 +35,6 @@ public enum Icon: String{
             return Icon.sun.rawValue
         }
     }
+    
 }
+

@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct WeatherData: Decodable, Identifiable{
-    
+struct WeatherData : Decodable, Identifiable{
     var id: String
-    var forecast: [Forecast]
+    var forecast:[Forecast]
+    
 }
