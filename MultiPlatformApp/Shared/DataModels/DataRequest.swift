@@ -13,8 +13,6 @@ enum GetDataRequest<Type>{
     case failuer
 }
 
-
-
 struct DataRequest<Type> where Type: Decodable{
     let basePath = "https://explorecalifornia.org/api/weather/city/"
     let dataURL:URL
@@ -27,7 +25,17 @@ struct DataRequest<Type> where Type: Decodable{
     
     func getData(completion: @escaping (GetDataRequest<Type>) -> Void){
         let dataTask = URLSession.shared.dataTask(with: dataURL) { data, response, error in
-//            guard
+            guard let jsonData = data else {
+                completion(.failuer)
+                return
+            }
+            do {
+                let resources = try JSONDecoder().decode([Type].self, from: jsonData)
+                completion(.success(resources))
+            }catch{
+                completion(.failuer)
+            }
         }
+        dataTask.resume()
     }
 }
