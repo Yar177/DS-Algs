@@ -1,14 +1,14 @@
 //
-//  MultiPlatformAppApp.swift
+//  MyCoolAppApp.swift
 //  Shared
 //
-//  Created by Hoshiar Sher on 12/12/21.
+//  Created by Hoshiar Sher on 12/19/21.
 //
 
 import SwiftUI
 
 @main
-struct MultiPlatformAppApp: App {
+struct MyCoolAppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -33,6 +33,7 @@
 		4A80C72E276FE1E2005AC130 /* WeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C72C276FE1E2005AC130 /* WeatherDetail.swift */; };
 		4A80C730276FE44F005AC130 /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C72F276FE44F005AC130 /* WeatherRow.swift */; };
 		4A80C731276FE44F005AC130 /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C72F276FE44F005AC130 /* WeatherRow.swift */; };
+		4A80C777276FF186005AC130 /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C776276FF186005AC130 /* AppTabNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		4A80C729276FD5BA005AC130 /* MyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWeatherView.swift; sourceTree = "<group>"; };
 		4A80C72C276FE1E2005AC130 /* WeatherDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetail.swift; sourceTree = "<group>"; };
 		4A80C72F276FE44F005AC130 /* WeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
+		4A80C776276FF186005AC130 /* AppTabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				4A16F55D27668F8100F32265 /* Shared */,
+				4A80C775276FF11D005AC130 /* iOS */,
 				4A16F56C27668F8300F32265 /* macOS */,
 				4A16F57527668F8400F32265 /* Tests iOS */,
 				4A16F58127668F8400F32265 /* Tests macOS */,
@@ -179,6 +182,14 @@
 				4A80C726276FD1F9005AC130 /* Defaults.swift */,
 			);
 			path = DataModels;
+			sourceTree = "<group>";
+		};
+		4A80C775276FF11D005AC130 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4A80C776276FF186005AC130 /* AppTabNavigation.swift */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +359,7 @@
 				4A16F5A22766928E00F32265 /* Icon.swift in Sources */,
 				4A80C72D276FE1E2005AC130 /* WeatherDetail.swift in Sources */,
 				4A16F58627668F8400F32265 /* MultiPlatformAppApp.swift in Sources */,
+				4A80C777276FF186005AC130 /* AppTabNavigation.swift in Sources */,
 				4A80C72A276FD5BA005AC130 /* MyWeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "MultiPlatformApp (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82QVHPVFHP;
@@ -538,6 +551,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yarsher.dev.MultiPlatformApp;
 				PRODUCT_NAME = MultiPlatformApp;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -549,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "MultiPlatformApp (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 82QVHPVFHP;
@@ -568,6 +583,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yarsher.dev.MultiPlatformApp;
 				PRODUCT_NAME = MultiPlatformApp;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
