@@ -4,5 +4,6 @@
         <page name='AutoLayout'/>
         <page name='GeneralSwift'/>
         <page name='SizeClasses'/>
+        <page name='SwiftSecurity'/>
     </pages>
 </playground>
