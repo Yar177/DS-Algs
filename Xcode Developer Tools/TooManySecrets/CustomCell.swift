@@ -30,7 +30,14 @@ extension CustomCell {
 extension CustomCell {
     
     func commonInit() {
+        setAccessibilityProperties()
     }
+    
+    func setAccessibilityProperties(){
+        passwordLabel.isAccessibilityElement = true
+        passwordValue.isAccessibilityElement = true
+    }
+    
     
     func setPassword(password: String) {
         passwordValue?.text = password
