@@ -13,7 +13,11 @@ class UIProblemsViewController: UIViewController {
     private func addImage() {
         let briefcaseImage = UIImageView(image: #imageLiteral(resourceName: "briefcase"))
         briefcaseImage.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(briefcaseImage)
+        
+        DispatchQueue.global().async {
+            self.view.addSubview(briefcaseImage)
+        }
+        
         
         NSLayoutConstraint.activate([
             briefcaseImage.widthAnchor.constraint(equalToConstant: 300),
