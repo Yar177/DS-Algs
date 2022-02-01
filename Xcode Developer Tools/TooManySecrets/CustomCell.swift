@@ -28,7 +28,7 @@ extension CustomCell {
 
 //MARK: - Dynamic Sizing font - iOS 10
 extension CustomCell {
-    
+
     func commonInit() {
         setAccessibilityProperties()
     }
@@ -42,5 +42,23 @@ extension CustomCell {
     func setPassword(password: String) {
         passwordValue?.text = password
         passwordValue.accessibilityValue = password
+    }
+}
+
+
+@available(iOS 10, *)
+extension CustomCell{
+    
+}
+
+
+@available(iOS 7, *)
+extension CustomCell{
+    fileprivate func assignFonts(){
+        
+        
+        
+        passwordLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        passwordValue.font = UIFont.preferredFont(forTextStyle: .body)
     }
 }

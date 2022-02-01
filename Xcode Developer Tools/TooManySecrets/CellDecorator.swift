@@ -2,9 +2,12 @@ import UIKit
 
 class CellDecorator {
     
-    lazy var decorate: (CustomCell, RowType) -> Void = { cell, rowType in
-        self.setupLabel(for: cell, rowType: rowType)
-        self.setupImage(for: cell, rowType: rowType)
+    lazy var decorate: (CustomCell, RowType) -> Void = { [weak self] cell, rowType in
+        NetworkLayer.shared.getSomeData {
+            <#code#>
+        }
+        self?.setupLabel(for: cell, rowType: rowType)
+        self?.setupImage(for: cell, rowType: rowType)
     }
     
     private func setupLabel(for cell: CustomCell, rowType: RowType) {
