@@ -3,9 +3,9 @@ import UIKit
 class CellDecorator {
     
     lazy var decorate: (CustomCell, RowType) -> Void = { [weak self] cell, rowType in
-        NetworkLayer.shared.getSomeData {
-            <#code#>
-        }
+//        NetworkLayer.shared.getSomeData {
+//            <#code#>
+//        }
         self?.setupLabel(for: cell, rowType: rowType)
         self?.setupImage(for: cell, rowType: rowType)
     }

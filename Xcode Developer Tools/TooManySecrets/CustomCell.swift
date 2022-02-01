@@ -16,6 +16,7 @@ class CustomCell: UITableViewCell {
     }
 }
 
+
 //MARK: adding images
 extension CustomCell {
     func add(image: UIImage) {

@@ -1,6 +1,8 @@
 import UIKit
 
 class TableViewModel {
+    
+    let queue = DispatchQueue(label: "label.thread", qos: .background, attributes: .concurrent, target: .none)
 
     let dataLayer = DataLayer<RowType>()
     
@@ -12,17 +14,28 @@ extension TableViewModel {
 
 //MARK: - single thread loadData - slow
     func loadData(finished: @escaping ()->Void) {
+        
+        let group = DispatchGroup()
+        
         for word in readablePasswords {
-            let rowType = Helper.rowType(for: word)
-            self.dataLayer.append(rowType)
+            queue.async(group: group, qos: .background, flags: DispatchWorkItemFlags()) {
+                let rowType = Helper.rowType(for: word)
+                self.dataLayer.append(rowType)
+            }
+            
         }
         
         for number in obscurePasswords {
+            queue.async(group: group, qos: .background, flags: DispatchWorkItemFlags()) {
             let rowType = Helper.rowType(for: number, isObscure: true)
             self.dataLayer.append(rowType)
+            }
         }
         
-        finished()
+        group.notify(queue: .main){
+            finished()
+        }
+        
     }    
 }
 
