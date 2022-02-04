@@ -5,5 +5,7 @@
         <page name='GeneralSwift'/>
         <page name='SizeClasses'/>
         <page name='SwiftSecurity'/>
+        <page name='Prototype'/>
+        <page name='FactoryDesign'/>
     </pages>
 </playground>

@@ -20,7 +20,12 @@ print("\(joe), \(patrick)")
 
 
 
-class NameClass{
+class NameClass: NSCopying{
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        return NameClass(firstName: self.firstName, lastName: self.lastName)
+    }
+    
     var firstName: String
     var lastName: String
     init(firstName: String, lastName: String){
@@ -36,7 +41,7 @@ extension NameClass: CustomStringConvertible{
 }
 
 var joeClass = NameClass(firstName: "Joe", lastName: "Doe")
-var patrickClass = joeClass
+var patrickClass = joeClass.copy() as! NameClass
 
 print("\(joeClass), \(patrickClass)")
 
