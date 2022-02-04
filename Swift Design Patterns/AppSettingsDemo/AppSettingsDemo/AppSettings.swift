@@ -12,7 +12,7 @@ final public class AppSettings {
     
     public static let shared = AppSettings()
     
-    private let serialQueue = DispatchQueue(label: "serialQueue")
+    private let concurrentQueue = DispatchQueue(label: "concurrentQueue", attributes: .concurrent)
     
     private var settings: [String: Any] = ["Theme": "Dark",
                                            "MaxConsurrentDownloads": 4]
@@ -21,7 +21,7 @@ final public class AppSettings {
     
     public func string(forKey key: String) -> String? {
         var result: String?
-        serialQueue.sync {
+        concurrentQueue.sync {
             result =  settings[key] as? String
         }
         return result
@@ -29,15 +29,15 @@ final public class AppSettings {
     
     public func int(forKey key: String) -> Int? {
         var result: Int?
-        serialQueue.sync {
+        concurrentQueue.sync {
             result = settings[key] as? Int
         }
         return result
     }
     
     public func setValueForKey(value: Any, forKey key: String){
-        serialQueue.sync {
-            settings[key] = value
+        concurrentQueue.async(flags: .barrier) {
+            self.settings[key] = value
         }
     }
 }
