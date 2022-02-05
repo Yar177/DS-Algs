@@ -7,5 +7,6 @@
         <page name='SwiftSecurity'/>
         <page name='Prototype'/>
         <page name='FactoryDesign'/>
+        <page name='Adapter'/>
     </pages>
 </playground>
