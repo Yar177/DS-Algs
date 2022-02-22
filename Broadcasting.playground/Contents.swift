@@ -55,12 +55,15 @@ class MyViewController : UIViewController {
         notifyButton.setTitleColor(.black, for: .normal)
         notifyButton.backgroundColor = .lightGray
         view.addSubview(notifyButton)
+        notifyButton.addTarget(self, action: #selector(onNotifyPressed(sender:)), for: UIControl.Event.touchUpInside)
+        
 
         let unregisterButton = UIButton(frame: CGRect(x: 0, y: 100, width: 380, height: 44))
         unregisterButton.setTitle("Unregister observer", for: .normal)
         unregisterButton.setTitleColor(.white, for: .normal)
         unregisterButton.backgroundColor = .red
         view.addSubview(unregisterButton)
+        unregisterButton.addTarget(self, action: #selector(onUnregisteredPressed(sender:)), for: UIControl.Event.touchUpInside)
 
         let labelCount = 10
         
@@ -70,10 +73,26 @@ class MyViewController : UIViewController {
             label.textColor = .black
             label.textAlignment = .center
             view.addSubview(label)
+            
+            notifyButton.register(label)
+            
             labels.append(label)
         }
         
         self.view = view
+    }
+    
+    @objc func onNotifyPressed(sender: UIButton!){
+        sender.onStateChanged()
+    }
+    
+    @objc func onUnregisteredPressed(sender: UIButton!){
+        guard !labels.isEmpty else{
+            return
+        }
+        let label = labels.removeFirst()
+        label.text = "onUnregisteredPressed"
+        sender.unregister(label)
     }
 }
 
