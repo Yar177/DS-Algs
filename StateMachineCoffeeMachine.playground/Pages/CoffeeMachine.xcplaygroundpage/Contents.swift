@@ -67,7 +67,16 @@ struct InsurtCapsuleStatte: CoffeeMachineState{
 
 struct BrewCoffeeStatte: CoffeeMachineState{
     var context: CoffeeMachine
-    
+    func brew() {
+        context.state = FillWaterTankStatte(context: context)
+        guard context.state.isReadyToBrew() else {
+            print("Something went wrong")
+            context.state = StandbyState()
+            return
+        }
+        print("Coffee ready")
+        context.state = StandbyState()
+    }
 
 }
 
