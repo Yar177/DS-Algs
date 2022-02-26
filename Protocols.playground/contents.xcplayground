@@ -3,5 +3,6 @@
     <pages>
         <page name='ProtocolExtensions'/>
         <page name='Protocols'/>
+        <page name='PhlymorphismShapes'/>
     </pages>
 </playground>
