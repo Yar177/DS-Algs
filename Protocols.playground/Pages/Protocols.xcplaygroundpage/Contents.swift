@@ -40,7 +40,7 @@ protocol TaggableInheratance {
     init(tag: String, data: Data)
 }
 
-protocol TaggedPresistable: TaggableInheratance, CustomStringConvertible, Equatable{
+protocol TaggedPresistable: TaggableInheratance, Equatable{
     init(tag: String, contentOf url: URL) throws
     func presist(to url: URL) throws
 }
@@ -52,22 +52,8 @@ protocol TaggedEncodable: TaggableInheratance{
 
 
 //Protocol Composition
-struct MyData: TaggedEncodable, TaggedPresistable{
-    var base64: String {
-        return self.data.base64EncodedString()
-    }
-    
-    init(tag: String, contentOf url: URL) throws {
-        let data = try Data.init(contentsOf: url)
-        self.init(tag: tag, data: data)
-    }
-    
-    func presist(to url: URL) throws {
-        try self.data.write(to: url)
-    }
-    
+struct MyData {
     var tag: String
-    
     var data: Data
     
     init(tag: String, data: Data) {
@@ -75,9 +61,49 @@ struct MyData: TaggedEncodable, TaggedPresistable{
         self.data = data
     }
     
+   
+}
+
+
+extension MyData:CustomStringConvertible{
     var description: String{
         return "MyData(\(tag)"
     }
 }
+
+
+extension MyData: TaggedEncodable{
+    var base64: String {
+        return self.data.base64EncodedString()
+    }
+}
+
+
+extension MyData: TaggedPresistable{
+    
+     init(tag: String, contentOf url: URL) throws {
+         let data = try Data.init(contentsOf: url)
+         self.init(tag: tag, data: data)
+     }
+     
+     func presist(to url: URL) throws {
+         try self.data.write(to: url)
+     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
